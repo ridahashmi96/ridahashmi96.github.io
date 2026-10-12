@@ -1,5 +1,5 @@
 # Q+U website
 
-Static site for the Q+U organisation, served by GitHub Pages at https://qplusu.github.io/.
+Static site for Q+U, served by GitHub Pages at https://qplusu.github.io/.
 
-Layout and stylesheet follow [VibeCheck](https://github.com/carolina-moron/vibe-check): navy ink on paper, 1px rules, label-column hero, ruled cards. Edit `index.html` and `src/styles.css`; there is no build step.
+Direction from harmoniqs.ai: a full-viewport hero on an animated canvas, a floating pill nav with a light/dark toggle that follows the time of day, tight display type and lots of air. The hero canvas (`src/wave.js`) is a particle wave where a migration front sweeps points from quantum-vulnerable to post-quantum. No build step: edit `index.html`, `src/styles.css` and `src/wave.js`. Append `?theme=dark` or `?theme=light` to force a theme.

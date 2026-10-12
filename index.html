@@ -5,81 +5,79 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Q+U</title>
   <meta name="description" content="Q+U sequences the post-quantum migration for least exposure: map what matters to the business, schedule the safest order to migrate, and carry it through with a repeatable playbook.">
+  <script>
+    (function(){try{
+      var KEY="theme-override";
+      function resolve(){var q=/[?&]theme=(dark|light)/.exec(location.search);if(q)return q[1];
+        try{var o=sessionStorage.getItem(KEY);if(o==="dark"||o==="light")return o;}catch(e){}
+        if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)return "dark";
+        var h=new Date().getHours();return (h>=7&&h<19)?"light":"dark";}
+      function apply(){var m=resolve();document.documentElement.setAttribute("data-theme",m);
+        var meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.content=m==="dark"?"#0B1426":"#F2ECE1";}
+      apply();setInterval(apply,60000);
+      window.__toggleTheme=function(){var cur=document.documentElement.getAttribute("data-theme");try{sessionStorage.setItem(KEY,cur==="dark"?"light":"dark");}catch(e){}apply();};
+    }catch(e){}})();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;1,400&display=swap">
-  <meta name="theme-color" content="#14264A">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+  <meta name="theme-color" content="#0B1426">
   <link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="src/styles.css?v=20261012d">
+  <link rel="stylesheet" href="src/styles.css?v=20261012f">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
-  <div class="helpstrip"><a href="#contact"><strong>Design partners wanted:</strong> regional banks, insurers and health systems facing the 2030 migration →</a></div>
-  <header class="site">
-    <div class="bar">
-      <a class="brand" href="#" aria-label="Q+U, home"><img src="assets/logo-mark.svg" alt="" width="36" height="36"><span class="wm"><span class="wm-1">Q</span><span class="wm-2">+U</span></span></a>
-      <nav aria-label="Main">
-        <a href="#problem">Problem</a>
-        <a href="#insight">Insight</a>
-        <a href="#platform">Platform</a>
-        <a href="#scanner">Scanner</a>
-        <a href="#who">Customers</a>
-        <a href="#why">Why now</a>
-        <a href="#competition">Competition</a>
-        <a href="#model">Model</a>
-        <a href="#team">Team</a>
-        <a href="#next">Next</a>
-      </nav>
-      <div class="bar-actions">
-        <a class="help-btn" href="#contact">Talk to us</a>
+
+  <div class="topbar">
+    <a class="brand" href="#" aria-label="Q+U, home"><img src="assets/logo-mark.svg" alt="">Q<span class="plus">+</span>U</a>
+    <nav class="pill" id="pill" aria-label="Main">
+      <a href="#problem">Problem</a>
+      <a href="#platform">Platform</a>
+      <a href="#scanner">Scanner</a>
+      <a href="#model">Model</a>
+      <a href="#team">Team</a>
+      <a href="#next">Next</a>
+      <div class="row">
+        <a class="cta" href="#contact">Talk to us</a>
+        <button type="button" class="more" id="more" aria-label="Menu" aria-expanded="false"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 4h12M2 8h12M2 12h12"/></svg></button>
+        <button type="button" id="theme" aria-label="Toggle light and dark theme" onclick="window.__toggleTheme&&window.__toggleTheme()">
+          <svg class="i-sun" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="3"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3 3l1.4 1.4M11.6 11.6 13 13M3 13l1.4-1.4M11.6 4.4 13 3"/></svg>
+          <svg class="i-moon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13.5 9.5A6 6 0 0 1 6.5 2.5a6 6 0 1 0 7 7z"/></svg>
+        </button>
       </div>
-    </div>
-  </header>
+    </nav>
+  </div>
 
   <main id="main" tabindex="-1">
-    <div class="hero">
-      <p class="eyebrow">Q+U · Secure transition sequencing</p>
-      <h1>Migrate to post-quantum security in the order that exposes you least.</h1>
-      <p class="lede">Every organisation must replace its encryption before quantum computers can break it, and the migration itself is the riskiest change most will ever make. Today's tools find vulnerable cryptography and rank it. Q+U maps what matters to the business, schedules the safest order to migrate, and carries the plan through with a repeatable playbook.</p>
-      <div class="stats">
-        <div><b>2030</b><span>NIST deprecates RSA and ECC</span></div>
-        <div><b>5%</b><span>Have a quantum strategy · ISACA 2025</span></div>
-        <div><b>62%</b><span>Breaches with a human element · DBIR 2026</span></div>
+    <section class="hero" aria-label="Introduction">
+      <canvas id="wave" aria-hidden="true"></canvas>
+      <div class="hero-inner">
+        <p class="eyebrow">Secure transition sequencing</p>
+        <h1>Migrate to post-quantum security in the order that exposes you least.</h1>
+        <p class="sub">Today's tools find vulnerable cryptography and rank it. Q+U maps what matters to the business, schedules the safest order to migrate, and carries the plan through.</p>
+        <div class="btns">
+          <a class="btn solid" href="#contact">Become a design partner</a>
+          <a class="btn" href="#platform">See the platform</a>
+        </div>
       </div>
-    </div>
+      <div class="ring-key" aria-hidden="true"><span><i></i>Quantum-vulnerable</span><span><i class="on"></i>Post-quantum</span></div>
+      <a class="scrollhint" href="#problem">Scroll</a>
+    </section>
 
-    <div class="figure-band" aria-label="Animated diagram: systems migrate one at a time from quantum-vulnerable to post-quantum, in the order that lowers exposure fastest, while the exposure line falls.">
-      <svg class="transition-fig" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid meet" role="img" aria-hidden="true">
-        <defs>
-          <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1" height="7" fill="#14264A"/></pattern>
-        </defs>
-        <!-- lanes -->
-        <text x="40" y="52" class="fl">Vulnerable</text>
-        <text x="40" y="262" class="fl">Post-quantum</text>
-        <line x1="40" y1="64" x2="1160" y2="64" class="fr"/>
-        <line x1="40" y1="236" x2="1160" y2="236" class="fr"/>
-        <!-- exposure curve, drawn as the migration proceeds -->
-        <path class="exposure" d="M 190 92 C 300 92, 330 110, 360 118 S 480 150, 520 158 S 650 190, 690 196 S 820 212, 860 216 S 990 224, 1030 226 L 1160 228"/>
-        <text x="1160" y="216" class="fl fl-a" text-anchor="end">Exposure</text>
-        <!-- systems, migrated in sequence: most critical first -->
-        <g class="sys s1" transform="translate(190,0)"><rect x="-26" y="-18" width="52" height="36" class="old"/><rect x="-26" y="-18" width="52" height="36" class="new"/><text y="5" class="fn">1</text></g>
-        <g class="sys s2" transform="translate(360,0)"><rect x="-26" y="-18" width="52" height="36" class="old"/><rect x="-26" y="-18" width="52" height="36" class="new"/><text y="5" class="fn">2</text></g>
-        <g class="sys s3" transform="translate(520,0)"><rect x="-26" y="-18" width="52" height="36" class="old"/><rect x="-26" y="-18" width="52" height="36" class="new"/><text y="5" class="fn">3</text></g>
-        <g class="sys s4" transform="translate(690,0)"><rect x="-26" y="-18" width="52" height="36" class="old"/><rect x="-26" y="-18" width="52" height="36" class="new"/><text y="5" class="fn">4</text></g>
-        <g class="sys s5" transform="translate(860,0)"><rect x="-26" y="-18" width="52" height="36" class="old"/><rect x="-26" y="-18" width="52" height="36" class="new"/><text y="5" class="fn">5</text></g>
-        <g class="sys s6" transform="translate(1030,0)"><rect x="-26" y="-18" width="52" height="36" class="old"/><rect x="-26" y="-18" width="52" height="36" class="new"/><text y="5" class="fn">6</text></g>
-        <!-- calendar blackout: a busy week the schedule steps around -->
-        <rect x="580" y="64" width="60" height="172" class="freeze"/>
-        <text x="610" y="156" class="fl fl-c" text-anchor="middle">Quarter close</text>
-      </svg>
-      <p class="figure-caption">What matters most moves first · the busy week is skipped · exposure falls with every step</p>
+    <div class="band">
+      <div class="wrap stats">
+        <div class="reveal"><b>2030</b><span>NIST IR 8547 deprecates RSA and ECC. Disallowed after 2035.</span></div>
+        <div class="reveal"><b>5%</b><span>of organisations have a defined quantum strategy. 55% have taken no steps. ISACA 2025.</span></div>
+        <div class="reveal"><b>62%</b><span>of breaches involve a human element. Verizon DBIR 2026.</span></div>
+      </div>
     </div>
 
     <section class="block" id="problem">
-      <div class="cols">
-        <h2>The problem</h2>
-        <div>
-          <p>Organisations face quantum migration without a starting point. In our founding research, many businesses could not say which data or infrastructure mattered most to their success, so they had no basis for deciding what to protect first. Inventory tools show what is vulnerable, not what is critical.</p>
-          <p>The people living through the migration are the most common way in for attackers. Standard awareness training does not change that: across 19,500 employees over eight months, trained and untrained staff failed phishing tests at the same rate (UC San Diego, IEEE S&amp;P 2025). What helped was interactive preparation delivered alongside the change itself.</p>
+      <div class="wrap cols">
+        <h2>The problem<small>No starting point</small></h2>
+        <div class="reveal">
+          <p class="lead">Organisations face quantum migration without a starting point, and the people living through it are the most common way in for attackers.</p>
+          <p>In our founding research, many businesses could not say which data or infrastructure mattered most to their success, so they had no basis for deciding what to protect first. Inventory tools show what is vulnerable, not what is critical.</p>
+          <p>Standard awareness training does not change the human picture. Across 19,500 employees over eight months, trained and untrained staff failed phishing tests at the same rate (UC San Diego, IEEE S&amp;P 2025). What helped was interactive preparation delivered alongside the change itself.</p>
           <table class="spec">
             <tr><th>Quantum plan</th><td>5% have a defined strategy; 55% have taken no steps. ISACA 2025.</td></tr>
             <tr><th>Understanding</th><td>30% of cyber and IT professionals say they do not understand quantum's capabilities. ISACA 2025.</td></tr>
@@ -92,24 +90,25 @@
     </section>
 
     <section class="block" id="insight">
-      <div class="cols">
-        <h2>Our insight</h2>
-        <div>
-          <p>The quantum migration fails before it starts, at the question every organisation struggles with: what matters most?</p>
-          <div class="cards three">
-            <div class="card static"><span class="tag">Exposure</span><h3>Transitions are peak exposure</h3><p class="fine">Old and new systems run side by side, defaults reset, and ownership blurs. Attackers look for the moment a system is between states.</p></div>
-            <div class="card static"><span class="tag">Timing</span><h3>Your calendar is a security input</h3><p class="fine">A migration step that is safe in a quiet month is risky in earnings week, quarter-close or open enrolment. Attackers aim for when people are rushed.</p></div>
-            <div class="card static"><span class="tag">People</span><h3>Change creates the pretext</h3><p class="fine">"Your certificate expires today, renew now" is far more believable mid-migration. The people going through the change need preparation tied to it.</p></div>
+      <div class="wrap cols">
+        <h2>Our insight<small>What matters most?</small></h2>
+        <div class="reveal">
+          <p class="lead">The quantum migration fails before it starts, at the question every organisation struggles with: what matters most?</p>
+          <div class="cards">
+            <div class="card"><span class="tag">Exposure</span><h3>Transitions are peak exposure</h3><p class="fine">Old and new systems run side by side, defaults reset, and ownership blurs. Attackers look for the moment a system is between states.</p></div>
+            <div class="card"><span class="tag">Timing</span><h3>Your calendar is a security input</h3><p class="fine">A migration step that is safe in a quiet month is risky in earnings week, quarter-close or open enrolment. Attackers aim for when people are rushed.</p></div>
+            <div class="card"><span class="tag">People</span><h3>Change creates the pretext</h3><p class="fine">"Your certificate expires today, renew now" is far more believable mid-migration. The people going through the change need preparation tied to it.</p></div>
           </div>
         </div>
       </div>
     </section>
 
     <section class="block" id="platform">
-      <div class="cols">
-        <h2>The platform</h2>
-        <div>
-          <p>One platform, two parts: software that maps what matters and sequences the migration for least exposure, and a services playbook that gets it deployed and prepares the people managing the change. We automate as much as we can with AI and use hands-on services where complex networks need them.</p>
+      <div class="wrap cols">
+        <h2>The platform<small>Software and a playbook</small></h2>
+        <div class="reveal">
+          <p class="lead">Software that maps what matters and sequences the migration for least exposure, plus a services playbook that gets it deployed and prepares the people managing the change.</p>
+          <p>We automate as much as we can with AI and use hands-on services where complex networks need them.</p>
 
           <h3>1. Intake: one inventory</h3>
           <p class="fine">An audit captures what no scanner sees: owners, criticality, how long each kind of data must stay secret, the business calendar and the obligations from contracts, regulators and policy. Aggregated scanning brings in the tools the customer already has, public-surface, code, internal network and certificate management, and fills the gaps. All of it becomes one standard inventory, mapped for dependencies and re-scanned continuously.</p>
@@ -132,35 +131,27 @@
     </section>
 
     <section class="block" id="scanner">
-      <div class="cols">
-        <h2>Scanner</h2>
-        <div>
-          <p>The Q+U Scanner prototype is the public-surface input to the intake layer. In one command it maps an organisation's TLS endpoints and SSH services, assesses every asset against FIPS 203, 204 and 205 and the NIST IR 8547 timeline, and writes a Cryptographic Bill of Materials (CBOM) that the inventory can read.</p>
-          <div class="cards three">
+      <div class="wrap cols">
+        <h2>Scanner<small>Open-source prototype</small></h2>
+        <div class="reveal">
+          <p class="lead">The public-surface input to the intake layer: one command maps TLS and SSH, scores every asset against NIST post-quantum standards, and writes a Cryptographic Bill of Materials.</p>
+          <div class="cards">
             <a class="card" href="https://github.com/QplusU/q-u-scanner-prototype">
-              <div class="cardtop"><span class="tag">Open source</span><span class="status proto"><span>Prototype</span></span></div>
+              <div class="cardtop"><span class="tag">Open source</span><span class="status proto">Prototype</span></div>
               <h3>q-u-scanner-prototype</h3>
               <p class="fine">Python pipeline for TLS and SSH post-quantum exposure assessment. Runs on your own infrastructure, with no cloud dependency, so it works in air-gapped and regulated environments.</p>
               <div class="cardfoot"><span class="fine">Python · AGPL-3.0 · GitHub</span></div>
             </a>
-            <div class="card static">
-              <div class="cardtop"><span class="tag">Detects</span></div>
-              <h3>Quantum-vulnerable</h3>
-              <p class="fine">X25519 and NIST-curve key exchange, RSA, ECDSA and Ed25519 host keys and signatures, legacy ciphers (RC4, 3DES, export grade) and weak MACs, each with its NIST replacement.</p>
-            </div>
-            <div class="card static">
-              <div class="cardtop"><span class="tag">Recognises</span></div>
-              <h3>PQC-safe</h3>
-              <p class="fine">Hybrid TLS key exchange such as X25519MLKEM768 and SecP256r1MLKEM768, and PQC SSH key exchange (sntrup761, mlkem, kyber, ntru, frodokem).</p>
-            </div>
+            <div class="card"><span class="tag">Detects</span><h3>Quantum-vulnerable</h3><p class="fine">X25519 and NIST-curve key exchange, RSA, ECDSA and Ed25519 host keys and signatures, legacy ciphers (RC4, 3DES, export grade) and weak MACs, each with its NIST replacement.</p></div>
+            <div class="card"><span class="tag">Recognises</span><h3>PQC-safe</h3><p class="fine">Hybrid TLS key exchange such as X25519MLKEM768 and SecP256r1MLKEM768, and PQC SSH key exchange (sntrup761, mlkem, kyber, ntru, frodokem).</p></div>
           </div>
-          <table class="spec" style="margin-top:24px">
+          <table class="spec" style="margin-top:20px">
             <tr><th>Discovery</th><td>Subdomain enumeration, DNS resolution, web and SSH service detection, with CDN bypass via MX and SPF records.</td></tr>
             <tr><th>Scanning</th><td>OpenSSL TLS handshake analysis and SSH auditing per host: versions, cipher suites, certificate chains, key exchange groups, hybrid PQC detection.</td></tr>
             <tr><th>Analysis</th><td>Per-endpoint quantum vulnerability score weighted across key exchange, certificate signature and symmetric cipher, with CRITICAL to LOW migration tiers aligned to the 2030 and 2035 deadlines.</td></tr>
             <tr><th>Reporting</th><td>CBOM in JSON plus a Markdown summary, with data-quality flags on every result and timestamped history to track progress between runs.</td></tr>
           </table>
-          <div class="btns" style="margin-top:20px">
+          <div class="btns" style="justify-content:flex-start;margin-top:16px">
             <a class="btn solid" href="https://github.com/QplusU/q-u-scanner-prototype">View on GitHub</a>
             <a class="btn" href="https://github.com/qubitac/AC-Scanner">Upstream: AC Scanner</a>
           </div>
@@ -170,10 +161,11 @@
     </section>
 
     <section class="block" id="who">
-      <div class="cols">
-        <h2>Who it's for</h2>
-        <div>
-          <p>Regulated mid-size organisations facing forced, multi-year migrations without a large cryptography team: security leaders at regional banks, insurers and health systems who inherit federal timelines through regulators and contracts, and whose big platforms will not migrate their systems for them.</p>
+      <div class="wrap cols">
+        <h2>Who it's for<small>Regulated mid-size</small></h2>
+        <div class="reveal">
+          <p class="lead">Regulated mid-size organisations facing forced, multi-year migrations without a large cryptography team.</p>
+          <p>Security leaders at regional banks, insurers and health systems inherit federal timelines through regulators and contracts, and their big platforms will not migrate their systems for them.</p>
           <table class="spec">
             <tr><th>Audit</th><td>Map what the business depends on most, inventory its cryptography, and produce the first sequenced plan. Fixed fee, fixed scope.</td></tr>
             <tr><th>Deployment</th><td>Hands-on migration support, stage by stage, following the plan and the playbook. Per migration stage.</td></tr>
@@ -185,16 +177,16 @@
     </section>
 
     <section class="block" id="competition">
-      <div class="cols">
-        <h2>Competition</h2>
-        <div>
-          <p>Discovery is crowded and ranking is contested. Deciding what matters most, scheduling for least exposure, and carrying the plan through are open.</p>
+      <div class="wrap cols">
+        <h2>Competition<small>Scheduling is open</small></h2>
+        <div class="reveal">
+          <p class="lead">Discovery is crowded and ranking is contested. Deciding what matters most, scheduling for least exposure, and carrying the plan through are open.</p>
           <table class="spec">
             <tr><th>Crypto discovery</th><td>Entrust, DigiCert, Thales, Palo Alto. Find quantum-vulnerable cryptography, then stop at the inventory. We plug into them.</td></tr>
             <tr><th>PQC risk ranking</th><td>SandboxAQ, IBM, Keyfactor, QIZ Security. Prioritise what is riskiest, without business criticality or real team capacity.</td></tr>
             <tr><th>Consultancies</th><td>Large advisory and integration firms. Bespoke migration programmes: expensive, slow to start, and the expertise leaves when they do.</td></tr>
             <tr><th>Awareness training</th><td>Simulation and module vendors. Annual modules and phishing tests, with large-scale evidence of little effect and no link to the migration.</td></tr>
-            <tr><th>Q+U</th><td>Map what matters, schedule the migration, and carry it through with a repeatable playbook.</td></tr>
+            <tr class="us"><th>Q+U</th><td>Map what matters, schedule the migration, and carry it through with a repeatable playbook.</td></tr>
           </table>
           <p class="fine">Incumbents will likely add scheduling within 12 to 24 months. Our defence is the objective function, the business and regulation layers built from the audit, an AI-automated playbook, and speed to design partners.</p>
         </div>
@@ -202,14 +194,15 @@
     </section>
 
     <section class="block" id="model">
-      <div class="cols">
-        <h2>Business model</h2>
-        <div>
-          <p>Every customer moves through audit, deployment and steady state on one platform. Services carry the heavy lifting early. The engine subscription runs underneath from the first day, so recurring revenue starts at the audit, and it is what remains when the migration is done. Change never stops: new systems, vendors and standards each create another transition.</p>
+      <div class="wrap cols">
+        <h2>Business model<small>Platform, not consultancy</small></h2>
+        <div class="reveal">
+          <p class="lead">Every customer moves through audit, deployment and steady state on one platform.</p>
+          <p>Services carry the heavy lifting early. The engine subscription runs underneath from the first day, so recurring revenue starts at the audit, and it is what remains when the migration is done. Change never stops: new systems, vendors and standards each create another transition.</p>
           <h3>Two ways to buy</h3>
           <div class="cards two">
-            <div class="card static"><span class="tag">Add-on</span><h3>Audit and engine</h3><p class="fine">Organisations with an existing security stack and their own deployment teams buy the audit and the subscription, and run the migration themselves.</p></div>
-            <div class="card static"><span class="tag">End-to-end</span><h3>All three phases</h3><p class="fine">Organisations with nothing today buy the audit, deployment and steady state, often through an MSP.</p></div>
+            <div class="card"><span class="tag">Add-on</span><h3>Audit and engine</h3><p class="fine">Organisations with an existing security stack and their own deployment teams buy the audit and the subscription, and run the migration themselves.</p></div>
+            <div class="card"><span class="tag">End-to-end</span><h3>All three phases</h3><p class="fine">Organisations with nothing today buy the audit, deployment and steady state, often through an MSP.</p></div>
           </div>
           <h3>A platform, not a consultancy</h3>
           <table class="spec">
@@ -224,23 +217,24 @@
     </section>
 
     <section class="block" id="why">
-      <div class="cols">
-        <h2>Why now</h2>
-        <div>
-          <p>The migration now has dates attached, and almost no one is ready. NIST IR 8547 proposes deprecating RSA and ECC after 2030 and disallowing them after 2035. Federal migration plans are being aligned to those dates, and federal rules flow into contractors, banks and healthcare.</p>
+      <div class="wrap cols">
+        <h2>Why now<small>Dates attached</small></h2>
+        <div class="reveal">
+          <p class="lead">The migration now has dates attached, and almost no one is ready.</p>
+          <p>NIST IR 8547 proposes deprecating RSA and ECC after 2030 and disallowing them after 2035. Federal migration plans are being aligned to those dates, and federal rules flow into contractors, banks and healthcare.</p>
           <p>The threat is already active: adversaries can harvest encrypted data today and decrypt it once quantum computers arrive, so long-lived data is exposed now. Early public feedback on IR 8547 asked for exactly what we build: granular guidance on what to migrate first.</p>
         </div>
       </div>
     </section>
 
     <section class="block" id="team">
-      <div class="cols">
-        <h2>Team</h2>
-        <div>
-          <div class="cards three">
-            <div class="card static"><span class="tag">CEO</span><h3>Brianna Gabaldon</h3><p class="fine">Product Manager at Microsoft on Windows, shipping to 1.4+ billion devices. B.S. Computer Science; M.S. Global Security, Conflict and Cybercrime (NYU), thesis on human factors in cyber risk. Carnegie Ethics Fellow; Ethical Tech CoLab advisor.</p></div>
-            <div class="card static"><span class="tag">CTO</span><h3>Dan</h3><p class="fine">B.S. Computational Mathematics; M.S. Quantum Science. Graduate research in large-scale RQC behaviour and Fermi gas simulations.</p></div>
-            <div class="card static"><span class="tag">CPO</span><h3>Carolina Morón</h3><p class="fine">B.S. International Business; M.S. Global Economy with a specialisation in Data Analytics; M.S. Global Security, Conflict and Cybercrime (NYU).</p></div>
+      <div class="wrap cols">
+        <h2>Team<small>Founders</small></h2>
+        <div class="reveal">
+          <div class="cards">
+            <div class="card"><span class="tag">CEO</span><h3>Brianna Gabaldon</h3><p class="fine">Product Manager at Microsoft on Windows, shipping to 1.4+ billion devices. B.S. Computer Science; M.S. Global Security, Conflict and Cybercrime (NYU), thesis on human factors in cyber risk. Carnegie Ethics Fellow; Ethical Tech CoLab advisor.</p></div>
+            <div class="card"><span class="tag">CTO</span><h3>Dan</h3><p class="fine">B.S. Computational Mathematics; M.S. Quantum Science. Graduate research in large-scale RQC behaviour and Fermi gas simulations.</p></div>
+            <div class="card"><span class="tag">CPO</span><h3>Carolina Morón</h3><p class="fine">B.S. International Business; M.S. Global Economy with a specialisation in Data Analytics; M.S. Global Security, Conflict and Cybercrime (NYU).</p></div>
           </div>
           <p class="fine" style="margin-top:20px">This work builds on <em>The Human Architecture of Cyber Risk: How Micro-Businesses Operate Beyond Conventional Frameworks</em>, M.S. thesis, NYU Center for Global Affairs, April 2026.</p>
         </div>
@@ -248,10 +242,10 @@
     </section>
 
     <section class="block" id="next">
-      <div class="cols">
-        <h2>What we must prove next</h2>
-        <div>
-          <p>We are pre-build, and discovery comes before code.</p>
+      <div class="wrap cols">
+        <h2>What we must prove next<small>Discovery before code</small></h2>
+        <div class="reveal">
+          <p class="lead">We are pre-build, and discovery comes before code.</p>
           <table class="spec">
             <tr><th>The starting point is real</th><td>Buyers confirm they don't know what to protect first, and that mapping what matters is worth paying for.</td></tr>
             <tr><th>The pain is felt</th><td>Transition risk is a distinct, payable problem, not "something Google handles".</td></tr>
@@ -261,31 +255,44 @@
           </table>
           <p class="fine">First step: 8 to 10 conversations with CISOs, integration leads and MSPs, then a thin end-to-end slice for one design partner. Still to do: a freedom-to-operate check against risk-based patch-sequencing patents.</p>
           <h3>Open questions</h3>
-          <div class="cards three">
-            <div class="card static"><span class="tag">Trust</span><h3>Why give us your data?</h3><p class="fine">Working answer: the paid audit is the moment a company opens its systems to us. Still open: what trust, security and contract terms that requires, and how little data the engine can start from.</p></div>
-            <div class="card static"><span class="tag">Learning</span><h3>Can preparation feel engaging?</h3><p class="fine">Could a friendly, habit-building experience help teams prepare without becoming another training module?</p></div>
-            <div class="card static"><span class="tag">Training</span><h3>What replaces today's training?</h3><p class="fine">It doesn't work. What form of preparation inside the playbook actually changes behaviour?</p></div>
+          <div class="cards">
+            <div class="card"><span class="tag">Trust</span><h3>Why give us your data?</h3><p class="fine">Working answer: the paid audit is the moment a company opens its systems to us. Still open: what trust, security and contract terms that requires, and how little data the engine can start from.</p></div>
+            <div class="card"><span class="tag">Learning</span><h3>Can preparation feel engaging?</h3><p class="fine">Could a friendly, habit-building experience help teams prepare without becoming another training module?</p></div>
+            <div class="card"><span class="tag">Training</span><h3>What replaces today's training?</h3><p class="fine">It doesn't work. What form of preparation inside the playbook actually changes behaviour?</p></div>
           </div>
         </div>
       </div>
     </section>
 
     <section class="block" id="contact">
-      <div class="cols">
-        <h2>Contact</h2>
-        <div>
-          <p>We are pre-build, and discovery comes before code. We are looking for CISOs, integration leads and MSPs to talk to, and for one design partner to run a thin end-to-end slice with.</p>
-          <div class="btns">
-            <a class="btn solid" href="https://github.com/QplusU">github.com/QplusU</a>
-            <a class="btn" href="https://github.com/QplusU/q-u-scanner-prototype/issues">Open an issue</a>
-          </div>
+      <div class="wrap contact-inner reveal">
+        <p class="eyebrow">Design partners</p>
+        <h2>Help us prove it on a real migration.</h2>
+        <p>We are looking for CISOs, integration leads and MSPs to talk to, and for one design partner to run a thin end-to-end slice with.</p>
+        <div class="btns">
+          <a class="btn solid" href="https://github.com/QplusU">github.com/QplusU</a>
+          <a class="btn" href="https://github.com/QplusU/q-u-scanner-prototype/issues">Open an issue</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site">
-    <p class="fine">Q+U · We build advanced technology to help people, not only to protect systems. Post-quantum cryptography, optimisation and AI matter because of what they make possible for the people inside an organisation: being safer, more confident, and ready for the change ahead. <a href="https://github.com/QplusU/qplusu.github.io">Site source</a>.</p>
+    <div class="wrap">
+      <p>We build advanced technology to help people, not only to protect systems. Post-quantum cryptography, optimisation and AI matter because of what they make possible for the people inside an organisation: being safer, more confident, and ready for the change ahead.</p>
+      <p>© 2026 Q+U · <a href="https://github.com/QplusU/qplusu.github.io">Site source</a></p>
+    </div>
   </footer>
+
+  <script src="src/wave.js?v=20261012f" defer></script>
+  <script>
+    (function(){
+      var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, { rootMargin: '0px 0px -10% 0px' });
+      document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+      var pill = document.getElementById('pill'), more = document.getElementById('more');
+      more.addEventListener('click', function(){ var o = pill.classList.toggle('open'); more.setAttribute('aria-expanded', o); });
+      pill.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ pill.classList.remove('open'); }); });
+    })();
+  </script>
 </body>
 </html>
