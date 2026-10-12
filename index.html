@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;1,400&display=swap">
   <meta name="theme-color" content="#14264A">
   <link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="src/styles.css?v=20261012b">
+  <link rel="stylesheet" href="src/styles.css?v=20261012c">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -21,6 +21,7 @@
         <a href="#problem">The problem</a>
         <a href="#insight">Our insight</a>
         <a href="#platform">Platform</a>
+        <a href="#scanner">Scanner</a>
         <a href="#who">Who it's for</a>
         <a href="#why">Why now</a>
         <a href="#team">Team</a>
@@ -93,7 +94,44 @@
           <h3>3. Playbook: carrying the plan through</h3>
           <p class="fine">Defined, repeatable service modules: a kickoff and critical-asset workshop, cutover readiness for each stage including the pretexts attackers will use, deployment support where automation stops, and AI-assisted documentation and reporting so each engagement takes less human time than the last.</p>
 
-          <div class="callout"><p>Proof of concept tooling: for internal and pilot use we rely on existing open-source scanners such as <a href="https://github.com/qubitac/AC-Scanner">AC Scanner</a> by Qubitac, unmodified, with output converted into our own inventory format from day one. Our <a href="https://github.com/QplusU/q-u-scanner-prototype">prototype fork</a> is on GitHub.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="scanner">
+      <div class="cols">
+        <h2>Scanner</h2>
+        <div>
+          <p>The Q+U Scanner prototype is the public-surface input to the intake layer. In one command it maps an organisation's TLS endpoints and SSH services, assesses every asset against FIPS 203, 204 and 205 and the NIST IR 8547 timeline, and writes a Cryptographic Bill of Materials (CBOM) that the inventory can read.</p>
+          <div class="cards three">
+            <a class="card" href="https://github.com/QplusU/q-u-scanner-prototype">
+              <div class="cardtop"><span class="tag">Open source</span><span class="status proto"><span>Prototype</span></span></div>
+              <h3>q-u-scanner-prototype</h3>
+              <p class="fine">Python pipeline for TLS and SSH post-quantum exposure assessment. Runs on your own infrastructure, with no cloud dependency, so it works in air-gapped and regulated environments.</p>
+              <div class="cardfoot"><span class="fine">Python · AGPL-3.0 · GitHub</span></div>
+            </a>
+            <div class="card static">
+              <div class="cardtop"><span class="tag">Detects</span></div>
+              <h3>Quantum-vulnerable</h3>
+              <p class="fine">X25519 and NIST-curve key exchange, RSA, ECDSA and Ed25519 host keys and signatures, legacy ciphers (RC4, 3DES, export grade) and weak MACs, each with its NIST replacement.</p>
+            </div>
+            <div class="card static">
+              <div class="cardtop"><span class="tag">Recognises</span></div>
+              <h3>PQC-safe</h3>
+              <p class="fine">Hybrid TLS key exchange such as X25519MLKEM768 and SecP256r1MLKEM768, and PQC SSH key exchange (sntrup761, mlkem, kyber, ntru, frodokem).</p>
+            </div>
+          </div>
+          <table class="spec" style="margin-top:24px">
+            <tr><th>Discovery</th><td>Subdomain enumeration, DNS resolution, web and SSH service detection, with CDN bypass via MX and SPF records.</td></tr>
+            <tr><th>Scanning</th><td>OpenSSL TLS handshake analysis and SSH auditing per host: versions, cipher suites, certificate chains, key exchange groups, hybrid PQC detection.</td></tr>
+            <tr><th>Analysis</th><td>Per-endpoint quantum vulnerability score weighted across key exchange, certificate signature and symmetric cipher, with CRITICAL to LOW migration tiers aligned to the 2030 and 2035 deadlines.</td></tr>
+            <tr><th>Reporting</th><td>CBOM in JSON plus a Markdown summary, with data-quality flags on every result and timestamped history to track progress between runs.</td></tr>
+          </table>
+          <div class="btns" style="margin-top:20px">
+            <a class="btn solid" href="https://github.com/QplusU/q-u-scanner-prototype">View on GitHub</a>
+            <a class="btn" href="https://github.com/qubitac/AC-Scanner">Upstream: AC Scanner</a>
+          </div>
+          <div class="callout"><p>Proof of concept, then our own scanner. The prototype is a fork of <a href="https://github.com/qubitac/AC-Scanner">AC Scanner</a> by <a href="https://qubitac.com">Qubitac</a> (AGPL-3.0), used unmodified for internal and pilot work, with its output converted into our inventory format from day one. We will build our own public-surface scanner before the platform serves paying customers or is offered as a hosted service.</p></div>
         </div>
       </div>
     </section>
