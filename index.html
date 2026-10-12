@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;1,400&display=swap">
   <meta name="theme-color" content="#14264A">
   <link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="src/styles.css?v=20261012c">
+  <link rel="stylesheet" href="src/styles.css?v=20261012d">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -18,13 +18,16 @@
     <div class="bar">
       <a class="brand" href="#" aria-label="Q+U, home"><img src="assets/logo-mark.svg" alt="" width="36" height="36"><span class="wm"><span class="wm-1">Q</span><span class="wm-2">+U</span></span></a>
       <nav aria-label="Main">
-        <a href="#problem">The problem</a>
-        <a href="#insight">Our insight</a>
+        <a href="#problem">Problem</a>
+        <a href="#insight">Insight</a>
         <a href="#platform">Platform</a>
         <a href="#scanner">Scanner</a>
-        <a href="#who">Who it's for</a>
+        <a href="#who">Customers</a>
         <a href="#why">Why now</a>
+        <a href="#competition">Competition</a>
+        <a href="#model">Model</a>
         <a href="#team">Team</a>
+        <a href="#next">Next</a>
       </nav>
       <div class="bar-actions">
         <a class="help-btn" href="#contact">Talk to us</a>
@@ -42,6 +45,33 @@
         <div><b>5%</b><span>Have a quantum strategy · ISACA 2025</span></div>
         <div><b>62%</b><span>Breaches with a human element · DBIR 2026</span></div>
       </div>
+    </div>
+
+    <div class="figure-band" aria-label="Animated diagram: systems migrate one at a time from quantum-vulnerable to post-quantum, in the order that lowers exposure fastest, while the exposure line falls.">
+      <svg class="transition-fig" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid meet" role="img" aria-hidden="true">
+        <defs>
+          <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1" height="7" fill="#14264A"/></pattern>
+        </defs>
+        <!-- lanes -->
+        <text x="40" y="52" class="fl">Vulnerable</text>
+        <text x="40" y="262" class="fl">Post-quantum</text>
+        <line x1="40" y1="64" x2="1160" y2="64" class="fr"/>
+        <line x1="40" y1="236" x2="1160" y2="236" class="fr"/>
+        <!-- exposure curve, drawn as the migration proceeds -->
+        <path class="exposure" d="M 190 92 C 300 92, 330 110, 360 118 S 480 150, 520 158 S 650 190, 690 196 S 820 212, 860 216 S 990 224, 1030 226 L 1160 228"/>
+        <text x="1160" y="216" class="fl fl-a" text-anchor="end">Exposure</text>
+        <!-- systems, migrated in sequence: most critical first -->
+        <g class="sys s1" transform="translate(190,0)"><rect x="-26" y="-18" width="52" height="36" class="old"/><rect x="-26" y="-18" width="52" height="36" class="new"/><text y="5" class="fn">1</text></g>
+        <g class="sys s2" transform="translate(360,0)"><rect x="-26" y="-18" width="52" height="36" class="old"/><rect x="-26" y="-18" width="52" height="36" class="new"/><text y="5" class="fn">2</text></g>
+        <g class="sys s3" transform="translate(520,0)"><rect x="-26" y="-18" width="52" height="36" class="old"/><rect x="-26" y="-18" width="52" height="36" class="new"/><text y="5" class="fn">3</text></g>
+        <g class="sys s4" transform="translate(690,0)"><rect x="-26" y="-18" width="52" height="36" class="old"/><rect x="-26" y="-18" width="52" height="36" class="new"/><text y="5" class="fn">4</text></g>
+        <g class="sys s5" transform="translate(860,0)"><rect x="-26" y="-18" width="52" height="36" class="old"/><rect x="-26" y="-18" width="52" height="36" class="new"/><text y="5" class="fn">5</text></g>
+        <g class="sys s6" transform="translate(1030,0)"><rect x="-26" y="-18" width="52" height="36" class="old"/><rect x="-26" y="-18" width="52" height="36" class="new"/><text y="5" class="fn">6</text></g>
+        <!-- calendar blackout: a busy week the schedule steps around -->
+        <rect x="580" y="64" width="60" height="172" class="freeze"/>
+        <text x="610" y="156" class="fl fl-c" text-anchor="middle">Quarter close</text>
+      </svg>
+      <p class="figure-caption">What matters most moves first · the busy week is skipped · exposure falls with every step</p>
     </div>
 
     <section class="block" id="problem">
@@ -94,6 +124,9 @@
           <h3>3. Playbook: carrying the plan through</h3>
           <p class="fine">Defined, repeatable service modules: a kickoff and critical-asset workshop, cutover readiness for each stage including the pretexts attackers will use, deployment support where automation stops, and AI-assisted documentation and reporting so each engagement takes less human time than the last.</p>
 
+          <h3>People in the playbook</h3>
+          <p class="fine">The engine is the core IP; the playbook is how we win early customers and build a data advantage. In the first design partnerships the founders personally run the kickoff and cutover sessions: they build trust, double as customer discovery, and capture each organisation's context for the engine. Every session follows the playbook, so services stay repeatable and can later be delivered by MSPs and partners. Research starts small: one partner, one migration milestone, one measure such as simulated phishing failure during the cutover, run with an academic collaborator. The long-term payoff is an evidence-based standard for security awareness in the quantum age, and outcome data no scanner company has.</p>
+          <p class="fine">Build order: map and engine v1 first, founder-led sessions alongside them, then a standardised playbook partners can deliver, then a published standard.</p>
         </div>
       </div>
     </section>
@@ -151,6 +184,45 @@
       </div>
     </section>
 
+    <section class="block" id="competition">
+      <div class="cols">
+        <h2>Competition</h2>
+        <div>
+          <p>Discovery is crowded and ranking is contested. Deciding what matters most, scheduling for least exposure, and carrying the plan through are open.</p>
+          <table class="spec">
+            <tr><th>Crypto discovery</th><td>Entrust, DigiCert, Thales, Palo Alto. Find quantum-vulnerable cryptography, then stop at the inventory. We plug into them.</td></tr>
+            <tr><th>PQC risk ranking</th><td>SandboxAQ, IBM, Keyfactor, QIZ Security. Prioritise what is riskiest, without business criticality or real team capacity.</td></tr>
+            <tr><th>Consultancies</th><td>Large advisory and integration firms. Bespoke migration programmes: expensive, slow to start, and the expertise leaves when they do.</td></tr>
+            <tr><th>Awareness training</th><td>Simulation and module vendors. Annual modules and phishing tests, with large-scale evidence of little effect and no link to the migration.</td></tr>
+            <tr><th>Q+U</th><td>Map what matters, schedule the migration, and carry it through with a repeatable playbook.</td></tr>
+          </table>
+          <p class="fine">Incumbents will likely add scheduling within 12 to 24 months. Our defence is the objective function, the business and regulation layers built from the audit, an AI-automated playbook, and speed to design partners.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="model">
+      <div class="cols">
+        <h2>Business model</h2>
+        <div>
+          <p>Every customer moves through audit, deployment and steady state on one platform. Services carry the heavy lifting early. The engine subscription runs underneath from the first day, so recurring revenue starts at the audit, and it is what remains when the migration is done. Change never stops: new systems, vendors and standards each create another transition.</p>
+          <h3>Two ways to buy</h3>
+          <div class="cards two">
+            <div class="card static"><span class="tag">Add-on</span><h3>Audit and engine</h3><p class="fine">Organisations with an existing security stack and their own deployment teams buy the audit and the subscription, and run the migration themselves.</p></div>
+            <div class="card static"><span class="tag">End-to-end</span><h3>All three phases</h3><p class="fine">Organisations with nothing today buy the audit, deployment and steady state, often through an MSP.</p></div>
+          </div>
+          <h3>A platform, not a consultancy</h3>
+          <table class="spec">
+            <tr><th>Productised services</th><td>Audits and deployment modules follow the playbook with fixed scope and fixed outputs, never open-ended hours.</td></tr>
+            <tr><th>AI does the repeatable work</th><td>Mapping, documentation, progress tracking and reporting are automated, so each engagement takes less human time than the last.</td></tr>
+            <tr><th>Partners carry deployment</th><td>MSPs and integrators deliver hands-on work under our playbook as we grow, protecting our capacity and shifting revenue toward software.</td></tr>
+            <tr><th>Deliberate revenue mix</th><td>Services-heavy in the first year by design, shifting toward subscription over time.</td></tr>
+          </table>
+          <p class="fine">Pricing, the target revenue mix and the market size are hypotheses to test in discovery and are not published here.</p>
+        </div>
+      </div>
+    </section>
+
     <section class="block" id="why">
       <div class="cols">
         <h2>Why now</h2>
@@ -171,6 +243,29 @@
             <div class="card static"><span class="tag">CPO</span><h3>Carolina Morón</h3><p class="fine">B.S. International Business; M.S. Global Economy with a specialisation in Data Analytics; M.S. Global Security, Conflict and Cybercrime (NYU).</p></div>
           </div>
           <p class="fine" style="margin-top:20px">This work builds on <em>The Human Architecture of Cyber Risk: How Micro-Businesses Operate Beyond Conventional Frameworks</em>, M.S. thesis, NYU Center for Global Affairs, April 2026.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="next">
+      <div class="cols">
+        <h2>What we must prove next</h2>
+        <div>
+          <p>We are pre-build, and discovery comes before code.</p>
+          <table class="spec">
+            <tr><th>The starting point is real</th><td>Buyers confirm they don't know what to protect first, and that mapping what matters is worth paying for.</td></tr>
+            <tr><th>The pain is felt</th><td>Transition risk is a distinct, payable problem, not "something Google handles".</td></tr>
+            <tr><th>The engine works</th><td>A schedule that lowers exposure faster than the buyer's current plan, benchmarked on their own risk matrix.</td></tr>
+            <tr><th>Customers share data</th><td>The paid audit is where access is earned. We must confirm organisations will grant enough access to their inventory and systems, and under what security and contract terms.</td></tr>
+            <tr><th>Someone pays</th><td>At every phase: design partners for the audit, an integrator letter of intent for deployment, and evidence that buyers keep paying for the subscription after the migration.</td></tr>
+          </table>
+          <p class="fine">First step: 8 to 10 conversations with CISOs, integration leads and MSPs, then a thin end-to-end slice for one design partner. Still to do: a freedom-to-operate check against risk-based patch-sequencing patents.</p>
+          <h3>Open questions</h3>
+          <div class="cards three">
+            <div class="card static"><span class="tag">Trust</span><h3>Why give us your data?</h3><p class="fine">Working answer: the paid audit is the moment a company opens its systems to us. Still open: what trust, security and contract terms that requires, and how little data the engine can start from.</p></div>
+            <div class="card static"><span class="tag">Learning</span><h3>Can preparation feel engaging?</h3><p class="fine">Could a friendly, habit-building experience help teams prepare without becoming another training module?</p></div>
+            <div class="card static"><span class="tag">Training</span><h3>What replaces today's training?</h3><p class="fine">It doesn't work. What form of preparation inside the playbook actually changes behaviour?</p></div>
+          </div>
         </div>
       </div>
     </section>

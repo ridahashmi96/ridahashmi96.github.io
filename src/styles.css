@@ -199,3 +199,48 @@ table.spec th { font-weight: 500; text-transform: uppercase; letter-spacing: 0.1
   .cols { grid-template-columns: minmax(0, 1fr); gap: 12px; }
 }
 @media (max-width: 860px) { .stats { flex-direction: column; gap: 12px; } .stats > div { border-right: 0; padding-right: 0; margin-right: 0; } }
+
+/* ---------- animated figure: secure transition sequencing ---------- */
+.figure-band { position: relative; border-bottom: var(--rule); margin-inline: -24px; padding: 24px 24px 40px; }
+.transition-fig { display: block; width: 100%; max-width: 1200px; height: auto; margin-inline: auto; }
+.transition-fig .fl { font: 500 11px var(--font); letter-spacing: 0.14em; text-transform: uppercase; fill: var(--ink); }
+.transition-fig .fl-a { fill: var(--accent); }
+.transition-fig .fl-c { font-size: 10px; fill: var(--ink-soft); }
+.transition-fig .fr { stroke: var(--line); stroke-width: 1; }
+.transition-fig .fn { font: 500 13px var(--font); fill: var(--ink); text-anchor: middle; }
+.transition-fig .old { fill: url(#hatch); stroke: var(--ink); stroke-width: 1; }
+.transition-fig .new { fill: var(--accent); stroke: var(--accent); stroke-width: 1; opacity: 0; }
+.transition-fig .freeze { fill: none; stroke: var(--ink-soft); stroke-width: 1; stroke-dasharray: 3 4; }
+.transition-fig .exposure { fill: none; stroke: var(--accent); stroke-width: 2; stroke-dasharray: 1100; stroke-dashoffset: 1100; }
+.transition-fig .sys { animation: move 12s ease-in-out infinite; }
+.transition-fig .sys .new { animation: reveal 12s linear infinite; }
+.transition-fig .sys .fn { animation: ink 12s linear infinite; }
+.transition-fig .s1, .transition-fig .s1 * { animation-delay: 0s; }
+.transition-fig .s2, .transition-fig .s2 * { animation-delay: 1.4s; }
+.transition-fig .s3, .transition-fig .s3 * { animation-delay: 2.8s; }
+.transition-fig .s4, .transition-fig .s4 * { animation-delay: 4.2s; }
+.transition-fig .s5, .transition-fig .s5 * { animation-delay: 5.6s; }
+.transition-fig .s6, .transition-fig .s6 * { animation-delay: 7s; }
+.transition-fig .exposure { animation: draw 12s linear infinite; }
+.transition-fig .s1 { --x: 190px; } .transition-fig .s2 { --x: 360px; } .transition-fig .s3 { --x: 520px; }
+.transition-fig .s4 { --x: 690px; } .transition-fig .s5 { --x: 860px; } .transition-fig .s6 { --x: 1030px; }
+@keyframes move {
+  0%, 8% { transform: translate(var(--x), 92px); }
+  18%, 72% { transform: translate(var(--x), 208px); }
+  86%, 100% { transform: translate(var(--x), 92px); }
+}
+@keyframes reveal { 0%, 10% { opacity: 0; } 18%, 72% { opacity: 1; } 86%, 100% { opacity: 0; } }
+@keyframes ink { 0%, 10% { fill: var(--ink); } 18%, 72% { fill: var(--on-ink); } 86%, 100% { fill: var(--ink); } }
+@keyframes draw { 0%, 8% { stroke-dashoffset: 1100; } 72% { stroke-dashoffset: 0; } 86%, 100% { stroke-dashoffset: 1100; } }
+@media (prefers-reduced-motion: reduce) {
+  .transition-fig .sys, .transition-fig .new, .transition-fig .fn, .transition-fig .exposure { animation: none; }
+  .transition-fig .sys { transform: translate(var(--x), 208px); }
+  .transition-fig .new { opacity: 1; } .transition-fig .fn { fill: var(--on-ink); }
+  .transition-fig .exposure { stroke-dashoffset: 0; }
+}
+@media (max-width: 860px) { .figure-band { margin-inline: -16px; padding: 16px 16px 28px; } }
+.transition-fig .sys { transform: translate(var(--x), 92px); animation-fill-mode: both; }
+.transition-fig .sys .new, .transition-fig .sys .fn, .transition-fig .exposure { animation-fill-mode: both; }
+.figure-caption { margin: 12px 0 0; font-size: var(--fs-0); letter-spacing: 0.14em; text-transform: uppercase; text-align: right; max-width: none; }
+.cards.two { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); max-width: 760px; }
+.bar nav { gap: 18px; }
