@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Q+U</title>
+  <meta name="description" content="Q+U builds open tools for post-quantum cryptography readiness. First project: a TLS and SSH scanner that produces a Cryptographic Bill of Materials aligned to NIST IR 8547.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+  <meta name="theme-color" content="#14264A">
+  <link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="src/styles.css?v=20261012">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="helpstrip"><a href="https://github.com/QplusU/q-u-scanner-prototype"><strong>New:</strong> the Q+U scanner prototype is on GitHub →</a></div>
+  <header class="site">
+    <div class="bar">
+      <a class="brand" href="#" aria-label="Q+U, home"><img src="assets/logo-mark.svg" alt="" width="36" height="36"><span class="wm"><span class="wm-1">Q</span><span class="wm-2">+U</span></span></a>
+      <nav aria-label="Main">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#scanner">Scanner</a>
+        <a href="#why">Why now</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="bar-actions">
+        <a class="help-btn" href="https://github.com/QplusU">GitHub</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <div class="hero">
+      <p class="eyebrow">Q+U · Post-quantum readiness</p>
+      <h1>Know what your cryptography is made of before 2030.</h1>
+      <p class="lede">Q+U builds open tools that inventory the cryptography an organisation actually runs, score it against NIST post-quantum standards, and turn the result into a Cryptographic Bill of Materials that auditors and engineers can act on.</p>
+      <div class="stats">
+        <div><b>2030</b><span>NIST deprecation of quantum-vulnerable algorithms</span></div>
+        <div><b>2035</b><span>Disallowment under NIST IR 8547</span></div>
+        <div><b>1</b><span>Open prototype, more to come</span></div>
+      </div>
+    </div>
+
+    <section class="block" id="about">
+      <div class="cols">
+        <h2>About</h2>
+        <div>
+          <p>Q+U is a small group working on the practical side of the post-quantum transition: not the mathematics, but the inventory, migration and governance work that every organisation has to do between now and the NIST deadlines.</p>
+          <p>Our work is open source. Tools run on your own infrastructure, with no cloud dependency, so they are usable in air-gapped and regulated environments.</p>
+          <p class="fine">Q+U stands for quantum plus you: the people who have to migrate real systems, not an abstract threat model.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="projects">
+      <div class="cols">
+        <h2>Projects</h2>
+        <div>
+          <div class="cards three">
+            <a class="card" href="https://github.com/QplusU/q-u-scanner-prototype">
+              <div class="cardtop"><span class="tag">Scanner</span><span class="status proto"><span>Prototype</span></span></div>
+              <h3>Q+U Scanner</h3>
+              <p class="fine">Discover TLS and SSH endpoints, score each against post-quantum standards and generate a CBOM. Forked from the AGPL-licensed AC Scanner by Qubitac.</p>
+              <div class="cardfoot"><span class="fine">Python · AGPL-3.0</span></div>
+            </a>
+            <div class="card static">
+              <div class="cardtop"><span class="tag">Research</span><span class="status">Planned</span></div>
+              <h3>Readiness snapshots</h3>
+              <p class="fine">Repeatable scans of public sectors over time, so migration progress can be measured rather than claimed.</p>
+            </div>
+            <div class="card static">
+              <div class="cardtop"><span class="tag">Guidance</span><span class="status">Planned</span></div>
+              <h3>Migration playbooks</h3>
+              <p class="fine">Per-algorithm replacement guidance that follows from a scan result, written for the engineers doing the work.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="scanner">
+      <div class="cols">
+        <h2>Scanner</h2>
+        <div>
+          <p>The scanner maps an organisation's cryptographic attack surface across TLS endpoints and SSH services in one command, then assesses every asset against FIPS 203, 204 and 205 and the NIST IR 8547 timeline.</p>
+          <table class="spec">
+            <tr><th>Discovery</th><td>Subdomain enumeration, DNS resolution, web and SSH service detection, with CDN bypass via MX and SPF records.</td></tr>
+            <tr><th>Scanning</th><td>OpenSSL TLS handshake analysis and SSH auditing per host: versions, cipher suites, certificate chains, key exchange groups, hybrid PQC detection.</td></tr>
+            <tr><th>Analysis</th><td>Per-endpoint quantum vulnerability score (key exchange, certificate signature, symmetric cipher) and CRITICAL to LOW migration tiers.</td></tr>
+            <tr><th>Reporting</th><td>Cryptographic Bill of Materials in JSON plus a Markdown summary, with data-quality flags on every result.</td></tr>
+          </table>
+          <div class="btns" style="margin-top:20px">
+            <a class="btn solid" href="https://github.com/QplusU/q-u-scanner-prototype">View the prototype</a>
+            <a class="btn" href="https://github.com/qubitac/AC-Scanner">Upstream: AC Scanner</a>
+          </div>
+          <div class="callout"><p>This is a prototype fork. Credit for the scanner engine goes to <a href="https://qubitac.com">Qubitac</a>, who presented AC Scanner at Black Hat USA 2026 Arsenal and DEF CON 34 Demo Labs. Q+U's changes are tracked in the fork's history.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="why">
+      <div class="cols">
+        <h2>Why now</h2>
+        <div>
+          <p>NIST finalised ML-KEM, ML-DSA and SLH-DSA in 2024. NIST IR 8547 sets 2030 for deprecating quantum-vulnerable algorithms and 2035 for disallowing them. Data encrypted today with RSA or elliptic-curve key exchange can be stored and decrypted later, so the exposure is already live.</p>
+          <p>A scan of the top 35 Fortune 500 companies with the upstream scanner in April 2026 found most HTTPS endpoints with no post-quantum protection and no PQC-safe certificate signatures at all. The hard part is not the new algorithms. It is knowing where the old ones are.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="contact">
+      <div class="cols">
+        <h2>Contact</h2>
+        <div>
+          <p>Q+U lives on GitHub. Open an issue on the scanner repository to report a bug, propose a feature or ask about collaborating.</p>
+          <div class="btns">
+            <a class="btn solid" href="https://github.com/QplusU">github.com/QplusU</a>
+            <a class="btn" href="https://github.com/QplusU/q-u-scanner-prototype/issues">Open an issue</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site">
+    <p class="fine">Q+U · Open tools for post-quantum cryptography readiness. Scan results are indicators from observed handshakes, not compliance findings. Scanner engine © Qubitac, AGPL-3.0. <a href="https://github.com/QplusU/qplusu.github.io">Site source</a>.</p>
+  </footer>
+</body>
+</html>
