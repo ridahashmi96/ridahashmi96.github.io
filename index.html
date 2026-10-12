@@ -4,97 +4,111 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Q+U</title>
-  <meta name="description" content="Q+U builds open tools for post-quantum cryptography readiness. First project: a TLS and SSH scanner that produces a Cryptographic Bill of Materials aligned to NIST IR 8547.">
+  <meta name="description" content="Q+U sequences the post-quantum migration for least exposure: map what matters to the business, schedule the safest order to migrate, and carry it through with a repeatable playbook.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;1,400&display=swap">
   <meta name="theme-color" content="#14264A">
   <link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="src/styles.css?v=20261012">
+  <link rel="stylesheet" href="src/styles.css?v=20261012b">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
-  <div class="helpstrip"><a href="https://github.com/QplusU/q-u-scanner-prototype"><strong>New:</strong> the Q+U scanner prototype is on GitHub →</a></div>
+  <div class="helpstrip"><a href="#contact"><strong>Design partners wanted:</strong> regional banks, insurers and health systems facing the 2030 migration →</a></div>
   <header class="site">
     <div class="bar">
       <a class="brand" href="#" aria-label="Q+U, home"><img src="assets/logo-mark.svg" alt="" width="36" height="36"><span class="wm"><span class="wm-1">Q</span><span class="wm-2">+U</span></span></a>
       <nav aria-label="Main">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#scanner">Scanner</a>
+        <a href="#problem">The problem</a>
+        <a href="#insight">Our insight</a>
+        <a href="#platform">Platform</a>
+        <a href="#who">Who it's for</a>
         <a href="#why">Why now</a>
-        <a href="#contact">Contact</a>
+        <a href="#team">Team</a>
       </nav>
       <div class="bar-actions">
-        <a class="help-btn" href="https://github.com/QplusU">GitHub</a>
+        <a class="help-btn" href="#contact">Talk to us</a>
       </div>
     </div>
   </header>
 
   <main id="main" tabindex="-1">
     <div class="hero">
-      <p class="eyebrow">Q+U · Post-quantum readiness</p>
-      <h1>Know what your cryptography is made of before 2030.</h1>
-      <p class="lede">Q+U builds open tools that inventory the cryptography an organisation actually runs, score it against NIST post-quantum standards, and turn the result into a Cryptographic Bill of Materials that auditors and engineers can act on.</p>
+      <p class="eyebrow">Q+U · Secure transition sequencing</p>
+      <h1>Migrate to post-quantum security in the order that exposes you least.</h1>
+      <p class="lede">Every organisation must replace its encryption before quantum computers can break it, and the migration itself is the riskiest change most will ever make. Today's tools find vulnerable cryptography and rank it. Q+U maps what matters to the business, schedules the safest order to migrate, and carries the plan through with a repeatable playbook.</p>
       <div class="stats">
-        <div><b>2030</b><span>NIST deprecation of quantum-vulnerable algorithms</span></div>
-        <div><b>2035</b><span>Disallowment under NIST IR 8547</span></div>
-        <div><b>1</b><span>Open prototype, more to come</span></div>
+        <div><b>2030</b><span>NIST deprecates RSA and ECC</span></div>
+        <div><b>5%</b><span>Have a quantum strategy · ISACA 2025</span></div>
+        <div><b>62%</b><span>Breaches with a human element · DBIR 2026</span></div>
       </div>
     </div>
 
-    <section class="block" id="about">
+    <section class="block" id="problem">
       <div class="cols">
-        <h2>About</h2>
+        <h2>The problem</h2>
         <div>
-          <p>Q+U is a small group working on the practical side of the post-quantum transition: not the mathematics, but the inventory, migration and governance work that every organisation has to do between now and the NIST deadlines.</p>
-          <p>Our work is open source. Tools run on your own infrastructure, with no cloud dependency, so they are usable in air-gapped and regulated environments.</p>
-          <p class="fine">Q+U stands for quantum plus you: the people who have to migrate real systems, not an abstract threat model.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="block" id="projects">
-      <div class="cols">
-        <h2>Projects</h2>
-        <div>
-          <div class="cards three">
-            <a class="card" href="https://github.com/QplusU/q-u-scanner-prototype">
-              <div class="cardtop"><span class="tag">Scanner</span><span class="status proto"><span>Prototype</span></span></div>
-              <h3>Q+U Scanner</h3>
-              <p class="fine">Discover TLS and SSH endpoints, score each against post-quantum standards and generate a CBOM. Forked from the AGPL-licensed AC Scanner by Qubitac.</p>
-              <div class="cardfoot"><span class="fine">Python · AGPL-3.0</span></div>
-            </a>
-            <div class="card static">
-              <div class="cardtop"><span class="tag">Research</span><span class="status">Planned</span></div>
-              <h3>Readiness snapshots</h3>
-              <p class="fine">Repeatable scans of public sectors over time, so migration progress can be measured rather than claimed.</p>
-            </div>
-            <div class="card static">
-              <div class="cardtop"><span class="tag">Guidance</span><span class="status">Planned</span></div>
-              <h3>Migration playbooks</h3>
-              <p class="fine">Per-algorithm replacement guidance that follows from a scan result, written for the engineers doing the work.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="block" id="scanner">
-      <div class="cols">
-        <h2>Scanner</h2>
-        <div>
-          <p>The scanner maps an organisation's cryptographic attack surface across TLS endpoints and SSH services in one command, then assesses every asset against FIPS 203, 204 and 205 and the NIST IR 8547 timeline.</p>
+          <p>Organisations face quantum migration without a starting point. In our founding research, many businesses could not say which data or infrastructure mattered most to their success, so they had no basis for deciding what to protect first. Inventory tools show what is vulnerable, not what is critical.</p>
+          <p>The people living through the migration are the most common way in for attackers. Standard awareness training does not change that: across 19,500 employees over eight months, trained and untrained staff failed phishing tests at the same rate (UC San Diego, IEEE S&amp;P 2025). What helped was interactive preparation delivered alongside the change itself.</p>
           <table class="spec">
-            <tr><th>Discovery</th><td>Subdomain enumeration, DNS resolution, web and SSH service detection, with CDN bypass via MX and SPF records.</td></tr>
-            <tr><th>Scanning</th><td>OpenSSL TLS handshake analysis and SSH auditing per host: versions, cipher suites, certificate chains, key exchange groups, hybrid PQC detection.</td></tr>
-            <tr><th>Analysis</th><td>Per-endpoint quantum vulnerability score (key exchange, certificate signature, symmetric cipher) and CRITICAL to LOW migration tiers.</td></tr>
-            <tr><th>Reporting</th><td>Cryptographic Bill of Materials in JSON plus a Markdown summary, with data-quality flags on every result.</td></tr>
+            <tr><th>Quantum plan</th><td>5% have a defined strategy; 55% have taken no steps. ISACA 2025.</td></tr>
+            <tr><th>Understanding</th><td>30% of cyber and IT professionals say they do not understand quantum's capabilities. ISACA 2025.</td></tr>
+            <tr><th>Human element</th><td>62% of breaches in 2026, about 60% in 2025. Verizon DBIR.</td></tr>
+            <tr><th>Third parties</th><td>48% of breaches in 2026, up 60% year over year. Verizon DBIR 2026.</td></tr>
+            <tr><th>Attackers and AI</th><td>The median attacker used AI across 15 documented techniques. Verizon DBIR 2026.</td></tr>
           </table>
-          <div class="btns" style="margin-top:20px">
-            <a class="btn solid" href="https://github.com/QplusU/q-u-scanner-prototype">View the prototype</a>
-            <a class="btn" href="https://github.com/qubitac/AC-Scanner">Upstream: AC Scanner</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="insight">
+      <div class="cols">
+        <h2>Our insight</h2>
+        <div>
+          <p>The quantum migration fails before it starts, at the question every organisation struggles with: what matters most?</p>
+          <div class="cards three">
+            <div class="card static"><span class="tag">Exposure</span><h3>Transitions are peak exposure</h3><p class="fine">Old and new systems run side by side, defaults reset, and ownership blurs. Attackers look for the moment a system is between states.</p></div>
+            <div class="card static"><span class="tag">Timing</span><h3>Your calendar is a security input</h3><p class="fine">A migration step that is safe in a quiet month is risky in earnings week, quarter-close or open enrolment. Attackers aim for when people are rushed.</p></div>
+            <div class="card static"><span class="tag">People</span><h3>Change creates the pretext</h3><p class="fine">"Your certificate expires today, renew now" is far more believable mid-migration. The people going through the change need preparation tied to it.</p></div>
           </div>
-          <div class="callout"><p>This is a prototype fork. Credit for the scanner engine goes to <a href="https://qubitac.com">Qubitac</a>, who presented AC Scanner at Black Hat USA 2026 Arsenal and DEF CON 34 Demo Labs. Q+U's changes are tracked in the fork's history.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="platform">
+      <div class="cols">
+        <h2>The platform</h2>
+        <div>
+          <p>One platform, two parts: software that maps what matters and sequences the migration for least exposure, and a services playbook that gets it deployed and prepares the people managing the change. We automate as much as we can with AI and use hands-on services where complex networks need them.</p>
+
+          <h3>1. Intake: one inventory</h3>
+          <p class="fine">An audit captures what no scanner sees: owners, criticality, how long each kind of data must stay secret, the business calendar and the obligations from contracts, regulators and policy. Aggregated scanning brings in the tools the customer already has, public-surface, code, internal network and certificate management, and fills the gaps. All of it becomes one standard inventory, mapped for dependencies and re-scanned continuously.</p>
+
+          <h3>2. Engine: everyone ranks, we schedule</h3>
+          <table class="spec">
+            <tr><th>What is risky</th><td>The crypto inventory, system dependencies and team capacity, solved for the migration order that lowers exposure fastest. The core IP is an exposure-minimisation objective function.</td></tr>
+            <tr><th>What matters</th><td>The plan adjusted by what the audit captured from people: which systems the business depends on most, and when it is most exposed.</td></tr>
+            <tr><th>What is required</th><td>Federal timelines, sector rules and contract terms built in as hard deadlines. The engine plans around obligations; it does not certify compliance or replace legal advice.</td></tr>
+          </table>
+
+          <h3>3. Playbook: carrying the plan through</h3>
+          <p class="fine">Defined, repeatable service modules: a kickoff and critical-asset workshop, cutover readiness for each stage including the pretexts attackers will use, deployment support where automation stops, and AI-assisted documentation and reporting so each engagement takes less human time than the last.</p>
+
+          <div class="callout"><p>Proof of concept tooling: for internal and pilot use we rely on existing open-source scanners such as <a href="https://github.com/qubitac/AC-Scanner">AC Scanner</a> by Qubitac, unmodified, with output converted into our own inventory format from day one. Our <a href="https://github.com/QplusU/q-u-scanner-prototype">prototype fork</a> is on GitHub.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="who">
+      <div class="cols">
+        <h2>Who it's for</h2>
+        <div>
+          <p>Regulated mid-size organisations facing forced, multi-year migrations without a large cryptography team: security leaders at regional banks, insurers and health systems who inherit federal timelines through regulators and contracts, and whose big platforms will not migrate their systems for them.</p>
+          <table class="spec">
+            <tr><th>Audit</th><td>Map what the business depends on most, inventory its cryptography, and produce the first sequenced plan. Fixed fee, fixed scope.</td></tr>
+            <tr><th>Deployment</th><td>Hands-on migration support, stage by stage, following the plan and the playbook. Per migration stage.</td></tr>
+            <tr><th>Steady state</th><td>The engine keeps checking as systems, vendors and standards change, flags drift back to weak cryptography, and reports. Subscription, from day one.</td></tr>
+          </table>
+          <p class="fine">Smaller organisations are reached through MSPs and MSSPs, which already hold the trust and the access and can deliver the playbook. The same engine later sequences other high-risk transitions: cloud moves, M&amp;A integration, vendor changes.</p>
         </div>
       </div>
     </section>
@@ -103,8 +117,22 @@
       <div class="cols">
         <h2>Why now</h2>
         <div>
-          <p>NIST finalised ML-KEM, ML-DSA and SLH-DSA in 2024. NIST IR 8547 sets 2030 for deprecating quantum-vulnerable algorithms and 2035 for disallowing them. Data encrypted today with RSA or elliptic-curve key exchange can be stored and decrypted later, so the exposure is already live.</p>
-          <p>A scan of the top 35 Fortune 500 companies with the upstream scanner in April 2026 found most HTTPS endpoints with no post-quantum protection and no PQC-safe certificate signatures at all. The hard part is not the new algorithms. It is knowing where the old ones are.</p>
+          <p>The migration now has dates attached, and almost no one is ready. NIST IR 8547 proposes deprecating RSA and ECC after 2030 and disallowing them after 2035. Federal migration plans are being aligned to those dates, and federal rules flow into contractors, banks and healthcare.</p>
+          <p>The threat is already active: adversaries can harvest encrypted data today and decrypt it once quantum computers arrive, so long-lived data is exposed now. Early public feedback on IR 8547 asked for exactly what we build: granular guidance on what to migrate first.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="team">
+      <div class="cols">
+        <h2>Team</h2>
+        <div>
+          <div class="cards three">
+            <div class="card static"><span class="tag">CEO</span><h3>Brianna Gabaldon</h3><p class="fine">Product Manager at Microsoft on Windows, shipping to 1.4+ billion devices. B.S. Computer Science; M.S. Global Security, Conflict and Cybercrime (NYU), thesis on human factors in cyber risk. Carnegie Ethics Fellow; Ethical Tech CoLab advisor.</p></div>
+            <div class="card static"><span class="tag">CTO</span><h3>Dan</h3><p class="fine">B.S. Computational Mathematics; M.S. Quantum Science. Graduate research in large-scale RQC behaviour and Fermi gas simulations.</p></div>
+            <div class="card static"><span class="tag">CPO</span><h3>Carolina Morón</h3><p class="fine">B.S. International Business; M.S. Global Economy with a specialisation in Data Analytics; M.S. Global Security, Conflict and Cybercrime (NYU).</p></div>
+          </div>
+          <p class="fine" style="margin-top:20px">This work builds on <em>The Human Architecture of Cyber Risk: How Micro-Businesses Operate Beyond Conventional Frameworks</em>, M.S. thesis, NYU Center for Global Affairs, April 2026.</p>
         </div>
       </div>
     </section>
@@ -113,7 +141,7 @@
       <div class="cols">
         <h2>Contact</h2>
         <div>
-          <p>Q+U lives on GitHub. Open an issue on the scanner repository to report a bug, propose a feature or ask about collaborating.</p>
+          <p>We are pre-build, and discovery comes before code. We are looking for CISOs, integration leads and MSPs to talk to, and for one design partner to run a thin end-to-end slice with.</p>
           <div class="btns">
             <a class="btn solid" href="https://github.com/QplusU">github.com/QplusU</a>
             <a class="btn" href="https://github.com/QplusU/q-u-scanner-prototype/issues">Open an issue</a>
@@ -124,7 +152,7 @@
   </main>
 
   <footer class="site">
-    <p class="fine">Q+U · Open tools for post-quantum cryptography readiness. Scan results are indicators from observed handshakes, not compliance findings. Scanner engine © Qubitac, AGPL-3.0. <a href="https://github.com/QplusU/qplusu.github.io">Site source</a>.</p>
+    <p class="fine">Q+U · We build advanced technology to help people, not only to protect systems. Post-quantum cryptography, optimisation and AI matter because of what they make possible for the people inside an organisation: being safer, more confident, and ready for the change ahead. <a href="https://github.com/QplusU/qplusu.github.io">Site source</a>.</p>
   </footer>
 </body>
 </html>
