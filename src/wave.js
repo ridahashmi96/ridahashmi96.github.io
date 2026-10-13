@@ -39,11 +39,16 @@
     ty = (e.clientY / window.innerHeight - 0.5) * 2;
   }, { passive: true });
 
+  const HOOP = 900;
+  const hoopSeed = new Float32Array(HOOP);
+  for (let i = 0; i < HOOP; i++) hoopSeed[i] = Math.random();
+
   const CYCLE = 18000; // ms for one migration sweep
   const start = performance.now();
+  const DEBUG_T = Number((/[?&]t=(\d+)/.exec(location.search) || [])[1]) || 0; // ?t=ms jumps the animation, for screenshots
 
   function frame(now) {
-    const t = reduce ? 11000 : (now - start);
+    const t = reduce ? 7500 : (now - start) + (DEBUG_T || 0);
     mx += (tx - mx) * 0.04; my += (ty - my) * 0.04;
     const phase = (t % CYCLE) / CYCLE;
     // the front crosses the field over 75% of the cycle, holds, then fades for the next pass
@@ -91,6 +96,42 @@
         ctx.fillStyle = `rgba(${cr | 0},${cg | 0},${cb | 0},${alpha.toFixed(3)})`;
         ctx.fillRect(px, py, s, s);
       }
+    }
+    // the hoop: the migration front itself, a circle of points standing in the wave,
+    // perpendicular to its travel, so the surface passes through it and comes out post-quantum
+    const hx = (front - 0.5) * 6.2 + mx * 0.12;
+    const hy = -0.72, hz = 1.6, HR = 1.3;
+    const hoopAlpha = 1 - resetFade;
+    const spin = t * 0.0004;
+    for (let k = 0; k < HOOP; k++) {
+      const a = (k / HOOP) * Math.PI * 2 + spin;
+      const jit = hoopSeed[k];
+      const rr = HR + (jit - 0.5) * 0.14;
+      // circle in the y-z plane, with a slight lean so it reads as a ring in perspective
+      const x = hx + Math.cos(a) * rr * 0.72;
+      const y = hy + Math.sin(a) * rr;
+      const z = hz + Math.cos(a) * rr * 0.6;
+      const zc = z * cp - y * sp + camZ;
+      if (zc < 0.2) continue;
+      const yc = y * cp + z * sp;
+      const f = (H * 0.9) / zc;
+      const px = W / 2 + x * f, py = horizon - yc * f;
+      const near = 1 - (z / 3.2) * 0.5;
+      const twinkle = 0.65 + 0.35 * Math.sin(t * 0.004 + jit * 40);
+      const alpha = (0.55 + 0.45 * near) * twinkle * hoopAlpha;
+      const s = (1.4 + 1.8 * near) * (0.8 + jit * 0.5);
+      ctx.fillStyle = `rgba(${colA[0]},${colA[1]},${colA[2]},${alpha.toFixed(3)})`;
+      ctx.fillRect(px - s / 2, py - s / 2, s, s);
+    }
+    // a faint halo where the hoop meets the surface
+    {
+      const zc = hz * cp - hy * sp + camZ, yc = hy * cp + hz * sp, f = (H * 0.9) / zc;
+      const px = W / 2 + hx * f, py = horizon - yc * f, R = HR * f;
+      const g = ctx.createRadialGradient(px, py, R * 0.2, px, py, R);
+      g.addColorStop(0, `rgba(${colA[0]},${colA[1]},${colA[2]},${(0.06 * hoopAlpha).toFixed(3)})`);
+      g.addColorStop(1, `rgba(${colA[0]},${colA[1]},${colA[2]},0)`);
+      ctx.fillStyle = g;
+      ctx.beginPath(); ctx.ellipse(px, py, R * 0.8, R * 0.9, 0, 0, Math.PI * 2); ctx.fill();
     }
     if (!reduce) requestAnimationFrame(frame);
   }
