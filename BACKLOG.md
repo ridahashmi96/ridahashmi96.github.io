@@ -31,7 +31,7 @@ Open work for the Q+U website and the material it presents. Ticked items are don
 - [ ] Open Graph and Twitter card images, so links unfurl with the wave rather than a blank card
 - [ ] Favicon set beyond the SVG mark (PNG fallbacks, apple-touch-icon)
 - [ ] Mobile pass on a real phone: hero height, wave density and the pill menu; headless screenshots only approximate it
-- [ ] Performance budget: the wave draws about 7,000 points per frame on the main thread; cap the frame rate on battery or when the hero is off screen
+- [ ] Performance budget: the sequencing disc pauses when scrolled off screen (IntersectionObserver); still cap the frame rate on battery
 - [ ] Accessibility pass: contrast of `--fg-soft` on both themes, focus order through the pill nav, skip link target
 - [ ] Analytics decision (none today); if added, cookie-free
 - [ ] Privacy: if the site must be org-only, move to a password-protected host (Netlify or Cloudflare Pages); GitHub Pages cannot restrict viewers below Enterprise Cloud

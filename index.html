@@ -49,17 +49,21 @@
 
   <main id="main" tabindex="-1">
     <section class="hero" aria-label="Introduction">
-      <canvas id="wave" aria-hidden="true"></canvas>
-      <div class="hero-inner">
-        <p class="eyebrow">Secure transition sequencing</p>
-        <h1>Migrate to post-quantum security in the order that exposes you least.</h1>
-        <p class="sub">Today's tools find vulnerable cryptography and rank it. Q+U maps what matters to the business, schedules the safest order to migrate, and carries the plan through.</p>
-        <div class="btns">
-          <a class="btn solid" href="#contact">Become a design partner</a>
-          <a class="btn" href="#platform">See the platform</a>
+      <div class="wrap hero-grid">
+        <div class="hero-inner">
+          <p class="eyebrow">Secure transition sequencing</p>
+          <h1>Migrate to post-quantum security in the order that exposes you least.</h1>
+          <p class="sub">Today's tools find vulnerable cryptography and rank it. Q+U maps what matters to the business, schedules the safest order to migrate, and carries the plan through.</p>
+          <div class="btns">
+            <a class="btn solid" href="#contact">Become a design partner</a>
+            <a class="btn" href="#platform">See the platform</a>
+          </div>
+        </div>
+        <div class="hero-fig">
+          <canvas id="disc" role="img" aria-label="Animated diagram: a sweep moves around a disc of systems in schedule order. Each system it reaches turns from quantum-vulnerable to post-quantum, the sweep skips a quarter-close freeze, and the exposure figure falls."></canvas>
+          <div class="ring-key" aria-hidden="true"><span><i></i>Quantum-vulnerable</span><span><i class="on"></i>Post-quantum</span></div>
         </div>
       </div>
-      <div class="ring-key" aria-hidden="true"><span><i></i>Quantum-vulnerable</span><span><i class="on"></i>Post-quantum</span></div>
       <a class="scrollhint" href="#problem">Scroll</a>
     </section>
 
@@ -284,7 +288,7 @@
     </div>
   </footer>
 
-  <script src="src/wave.js?v=20261012i" defer></script>
+  <script src="src/radar.js?v=20261012j" defer></script>
   <script>
     (function(){
       var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, { rootMargin: '0px 0px -10% 0px' });
