@@ -155,6 +155,12 @@ table.spec tr.us th, table.spec tr.us td { color: var(--accent); }
 .reveal.in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } .scrollhint::after { animation: none; } }
 
+/* wave band under the contact call to action */
+.wave-band { position: relative; height: clamp(260px, 38vw, 460px); margin-top: -24px; }
+.wave-band canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.wave-band .ring-key { left: 24px; bottom: 10px; }
+section#contact { padding-bottom: 0; }
+
 /* contact + footer */
 .contact-inner { text-align: center; padding: 96px 24px; }
 .contact-inner h2 { font-size: clamp(1.8rem, 1.2rem + 2.4vw, 3rem); letter-spacing: -0.03em; }
