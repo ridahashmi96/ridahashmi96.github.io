@@ -60,7 +60,8 @@
     const resetFade = phase > 0.9 ? (phase - 0.9) / 0.1 : 0;
 
     // camera: looking slightly down across the sheet; the sheet sits in the lower part of the hero
-    const horizon = H * 0.52 + my * 10;
+    const FOC = Math.max(H * 0.9, Math.min(W, 1400) * 0.58);
+    const horizon = H * 0.5 + my * 10;
     const camZ = 2.4;
     const pitch = 0.34 - my * 0.03;
     const cp = Math.cos(pitch), sp = Math.sin(pitch);
@@ -87,7 +88,7 @@
         // rotate by pitch, then project
         const zc = z0 * cp - y * sp + camZ;
         const yc = y * cp + z0 * sp;
-        const f = (H * 0.9) / zc;
+        const f = FOC / zc;
         const px = W / 2 + x0 * f;
         const py = horizon - yc * f;
         if (px < -4 || px > W + 4 || py < -4 || py > H + 4) continue;
@@ -118,7 +119,7 @@
       const zc = z * cp - y * sp + camZ;
       if (zc < 0.2) continue;
       const yc = y * cp + z * sp;
-      const f = (H * 0.9) / zc;
+      const f = FOC / zc;
       const px = W / 2 + x * f, py = horizon - yc * f;
       const near = 1 - (z / 3.2) * 0.5;
       const twinkle = 0.65 + 0.35 * Math.sin(t * 0.004 + jit * 40);
@@ -129,7 +130,7 @@
     }
     // a faint halo where the hoop meets the surface
     {
-      const zc = hz * cp - hy * sp + camZ, yc = hy * cp + hz * sp, f = (H * 0.9) / zc;
+      const zc = hz * cp - hy * sp + camZ, yc = hy * cp + hz * sp, f = FOC / zc;
       const px = W / 2 + hx * f, py = horizon - yc * f, R = HR * f;
       const g = ctx.createRadialGradient(px, py, R * 0.2, px, py, R);
       g.addColorStop(0, `rgba(${colA[0]},${colA[1]},${colA[2]},${(0.06 * hoopAlpha).toFixed(3)})`);

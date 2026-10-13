@@ -156,7 +156,7 @@ table.spec tr.us th, table.spec tr.us td { color: var(--accent); }
 @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } .scrollhint::after { animation: none; } }
 
 /* wave band under the contact call to action */
-.wave-band { position: relative; height: clamp(260px, 38vw, 460px); margin-top: -24px; }
+.wave-band { position: relative; height: clamp(360px, 46vw, 620px); margin-top: -16px; }
 .wave-band canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
 .wave-band .ring-key { left: 24px; bottom: 10px; }
 section#contact { padding-bottom: 0; }
